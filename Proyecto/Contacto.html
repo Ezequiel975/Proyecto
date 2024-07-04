@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="IndexCSS.css">
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); 
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            if (name === '' || email === '' || message === '') {
+            
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            
+            alert('Formulario enviado correctamente!');
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</head>
+<body>
+    <div class="NavBar">
+        <div>
+            <h1>Contacto</h1>
+            <div class="nav-buttons">
+                <a href="HomeHTML.html" class="nav-button">Home</a>
+            </div>
+        </div>
+        <div class="logo-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="logo" />
+        </div>
+    </div>
+    <div class="Content">
+        <div class="contact-info">
+            <h2>Información de Contacto</h2>
+            <p>
+                Si tienes alguna pregunta, no dudes en contactarnos:
+                <br>
+                <strong>Correo Electrónico:</strong> contacto@ejemplo.com
+                <br>
+                <strong>Teléfono:</strong> +1 234 567 890
+                <br>
+                <strong>Dirección:</strong> Calle Falsa 123, Ciudad Ejemplo, País
+            </p>
+        </div>
+        <div class="contact-form">
+            <h2>Formulario de Contacto</h2>
+            <form id="contact-form" onsubmit="enviarFormulario(event)">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Correo Electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Mensaje:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <button type="submit" class="nav-button">Enviar</button>
+            </form>
+        </div>
+        <div class="contact-whatsapp">
+            <h2>Contáctanos por WhatsApp</h2>
+            <a href="https://wa.me/2615389721" target="_blank" class="nav-button whatsapp-button">WhatsApp</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Tu Sueño en una Pieza. Todos los derechos reservados.</p>
+    </div>
+</body>
+</html>
